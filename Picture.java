@@ -11,10 +11,14 @@
  */
 public class Picture
 {
-    private Square wall;
-    private Square window;
-    private Triangle roof;
-    private Circle sun;
+    private Square background;
+    private Triangle upYellow;
+    private Triangle downGreen;
+    private Circle circleRed;
+    private Circle circleBlue;
+    private Circle circleMagenta;
+    private Circle circleYellow;
+    private Circle circleBlack;
 
     /**
      * Constructor for objects of class Picture
@@ -29,31 +33,61 @@ public class Picture
      */
     public void draw()
     {
-        wall = new Square();
-        wall.moveHorizontal(-140);
-        wall.moveVertical(20);
-        wall.changeSize(120);
-        wall.makeVisible();
+        background = new Square();
+        background.changeColor("green");
+        background.moveHorizontal(-310);
+        background.moveVertical(-120);
+        background.changeSize(500);
+        background.makeVisible();
+
+        circleRed = new Circle();
+        circleRed.changeColor("red");
+        circleRed.moveHorizontal(-130);
+        circleRed.moveVertical(-90);
+        circleRed.changeSize(300);
+        circleRed.makeVisible();
         
-        window = new Square();
-        window.changeColor("black");
-        window.moveHorizontal(-120);
-        window.moveVertical(40);
-        window.changeSize(40);
-        window.makeVisible();
-
-        roof = new Triangle();  
-        roof.changeSize(60, 180);
-        roof.moveHorizontal(20);
-        roof.moveVertical(-60);
-        roof.makeVisible();
-
-        sun = new Circle();
-        sun.changeColor("yellow");
-        sun.moveHorizontal(100);
-        sun.moveVertical(-40);
-        sun.changeSize(80);
-        sun.makeVisible();
+        circleBlue = new Circle();
+        circleBlue.changeColor("blue");
+        circleBlue.moveHorizontal(-230);
+        circleBlue.moveVertical(-90);
+        circleBlue.changeSize(120);
+        circleBlue.makeVisible();
+        
+        circleMagenta = new Circle();
+        circleMagenta.changeColor("magenta");
+        circleMagenta.moveHorizontal(150);
+        circleMagenta.moveVertical(-90);
+        circleMagenta.changeSize(120);
+        circleMagenta.makeVisible();
+        
+        circleYellow = new Circle();
+        circleYellow.changeColor("yellow");
+        circleYellow.moveHorizontal(150);
+        circleYellow.moveVertical(90);
+        circleYellow.changeSize(120);
+        circleYellow.makeVisible();
+        
+        circleBlack = new Circle();
+        circleBlack.changeColor("black");
+        circleBlack.moveHorizontal(-230);
+        circleBlack.moveVertical(90);
+        circleBlack.changeSize(120);
+        circleBlack.makeVisible();
+        
+        upYellow = new Triangle();
+        upYellow.changeColor("yellow");
+        upYellow.changeSize(228, 266);
+        upYellow.moveHorizontal(40);
+        upYellow.moveVertical(-140);
+        upYellow.makeVisible();
+        
+        downGreen = new Triangle();
+        downGreen.changeColor("green");
+        downGreen.changeSize(-228, 266);
+        downGreen.moveHorizontal(40);
+        downGreen.moveVertical(160);
+        downGreen.makeVisible();
     }
 
     /**
@@ -61,12 +95,16 @@ public class Picture
      */
     public void setBlackAndWhite()
     {
-        if (wall != null)   // only if it's painted already...
+        if (background != null)   // only if it's painted already...
         {
-            wall.changeColor("black");
-            window.changeColor("white");
-            roof.changeColor("black");
-            sun.changeColor("black");
+            background.changeColor("black");
+            circleRed.changeColor("white");
+            circleBlue.changeColor("white");
+            circleMagenta.changeColor("white");
+            circleYellow.changeColor("white");
+            circleBlack.changeColor("white");
+            upYellow.changeColor("black");
+            downGreen.changeColor("black");
         }
     }
 
@@ -75,12 +113,16 @@ public class Picture
      */
     public void setColor()
     {
-        if (wall != null)   // only if it's painted already...
+        if (background != null)   // only if it's painted already...
         {
-            wall.changeColor("red");
-            window.changeColor("black");
-            roof.changeColor("green");
-            sun.changeColor("yellow");
+            background.changeColor("green");
+            circleRed.changeColor("red");
+            circleBlue.changeColor("blue");
+            circleMagenta.changeColor("magenta");
+            circleYellow.changeColor("yellow");
+            circleBlack.changeColor("black");
+            upYellow.changeColor("yellow");
+            downGreen.changeColor("green");
         }
     }
 }
